@@ -11,7 +11,19 @@ echo "deb http://developer.download.nvidia.com/compute/machine-learning/repos/ub
 
 sudo apt-get update
 
-sudo apt-get install -y linux-image-extra-`uname -r` linux-headers-`uname -r` linux-image-`uname -r`
+sudo apt-get install -y linux-image-extra-\`uname -r\` linux-headers-\`uname -r\` linux-image-\`uname -r\`
 
 sudo apt-get install -y cuda libcudnn5-dev=5.0.5-1+cuda7.5
 
+# install cuDNN:
+Note that, the foregoing command will only install cuda for you. To install cuDNN, you need to download the package first from here (https://developer.nvidia.com/cudnn).
+
+Then, follow the following code:
+```
+tar -xzvf cudnn-9.0-linux-x64-v7.tgz [or whatever version you downloaded]
+
+sudo cp cuda/include/cudnn.h /usr/local/cuda(version)/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda(version)/lib64
+sudo chmod a+r /usr/local/cuda(version)/include/cudnn.h
+sudo chmod a+r /usr/local/cuda(version)/lib64/libcudnn*
+```
