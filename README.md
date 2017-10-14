@@ -28,6 +28,6 @@ sudo chmod a+r /usr/local/cuda(version)/include/cudnn.h
 sudo chmod a+r /usr/local/cuda(version)/lib64/libcudnn*
 ```
 # This command is super useful to run Linux command totally in backend
-'''
+```
 screen -d -m command
-'''
+```
